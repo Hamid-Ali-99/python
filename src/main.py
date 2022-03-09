@@ -1,13 +1,21 @@
-class Shopping:
+class Bank:
     def __init__(self):
-        self.cart = [ ]
-    def add_to_cart(self, item):
-        self.cart.append(item)
-            
-customer1 = Shopping()
-customer1.add_to_cart('T-shirt')
-print(customer1.cart)
+        self.minimum = 100
+        self.balance = 1000
+    def get_balance(self):
+        return self.balance
+    def withdraw(self, amount):
+        if amount < self.minimum:
+            print('No money for you')
+        else:
+            self.balance = self.balance - amount
+            return amount
 
-customer2 = Shopping()
-customer2.add_to_cart('Shoes')
-print(customer2.cart)
+
+my_bank = Bank()
+my_bank.withdraw(100)
+balance = my_bank.get_balance()
+print(balance)
+my_bank.withdraw(50)
+balance = my_bank.get_balance()
+print(balance)
