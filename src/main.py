@@ -7,15 +7,17 @@ class Bank:
     def withdraw(self, amount):
         if amount < self.minimum:
             print('No money for you')
+        elif amount > self.balance:
+            print('You are broke! no money!')
         else:
             self.balance = self.balance - amount
             return amount
-
-
+            
+            
 my_bank = Bank()
 my_bank.withdraw(100)
 balance = my_bank.get_balance()
 print(balance)
-my_bank.withdraw(50)
+my_bank.withdraw(1250)
 balance = my_bank.get_balance()
 print(balance)
