@@ -1,23 +1,10 @@
 class Bank:
-    def __init__(self):
-        self.minimum = 100
-        self.balance = 1000
+    def __init__(self, name):
+        self.name = name
+        self.__balance = 1000
     def get_balance(self):
-        return self.balance
-    def withdraw(self, amount):
-        if amount < self.minimum:
-            print('No money for you')
-        elif amount > self.balance:
-            print('You are broke! no money!')
-        else:
-            self.balance = self.balance - amount
-            return amount
-            
-            
-my_bank = Bank()
-my_bank.withdraw(100)
-balance = my_bank.get_balance()
-print(balance)
-my_bank.withdraw(1250)
-balance = my_bank.get_balance()
-print(balance)
+        return self.__balance
+
+account = Bank('Tony Stark')
+print(account.name)
+print(account.get_balance())
